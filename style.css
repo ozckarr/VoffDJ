@@ -1,0 +1,44 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type="checkbox"]{ /*Main checkbox styling*/
+  margin: 0.2em;
+  -webkit-appearance:none; /*Removes default styling*/
+  background-color: #fff;
+  width: 1.3rem;
+  height: 1.3rem;
+  position: relative;
+  top: -0.10rem; /*Relative position*/
+  border: solid black 0.1rem;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked:before { /*Checkbox when checked styling*/
+  content: '✔'; /*Checkbox content*/
+  padding: auto;
+  position: absolute;
+  left: 0.3rem; /*Move if ✔ isn't centered*/
+  top: 0.05rem; /*Move if ✔ isn't centered*/
+ }
+
+ input[type=checkbox]:checked + p { /*Puts line through text when checked*/
+  text-decoration: line-through;
+}
+
+.allDoggos{
+  overflow: scroll;
+  width: 15em;
+}
+
+.onOffbutton{
+  border: solid black 0.1rem;
+  padding: 1em;
+  margin: 0.5em;
+  width: 5em;
+  font-weight: 900;
+}
