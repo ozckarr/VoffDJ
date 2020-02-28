@@ -1,14 +1,7 @@
-/*window.addEventListener('load', init);
-
-function init(){
-  setTimeout(sequencer, 500);
-}*/
-//document.querySelector(".allDoggos").addEventListener("click", korv);
-
 
 
 function sequencer() {
-  let onOffbutton = document.querySelector('.onOffbutton')
+    let onOffbutton = document.querySelector('.onOffbutton')
 
     const doggo0 = new Tone.Player("./audio/doggo0.wav").toMaster();
     const doggo1 = new Tone.Player("./audio/doggo1.wav").toMaster();
@@ -36,6 +29,7 @@ function sequencer() {
 
     function repeat() {
       let step = index % 8; //How many notes, change if more than 8 checkboxes
+
       let doggo0Inputs = document.querySelector(
         `.doggo0 input:nth-child(${step + 1})`
       );
@@ -57,8 +51,20 @@ function sequencer() {
       let doggo6Inputs = document.querySelector(
         `.doggo6 input:nth-child(${step + 1})`
       );
+      
+      document.querySelector(`.korv0`).style.backgroundColor="white"
+      document.querySelector(`.korv1`).style.backgroundColor="white"
+      document.querySelector(`.korv2`).style.backgroundColor="white"
+      document.querySelector(`.korv3`).style.backgroundColor="white"
+      document.querySelector(`.korv4`).style.backgroundColor="white"
+      document.querySelector(`.korv5`).style.backgroundColor="white"
+      document.querySelector(`.korv6`).style.backgroundColor="white"
+      document.querySelector(`.korv7`).style.backgroundColor="white"
+      document.querySelector(`.korv${step}`).style.backgroundColor="blue"
+
       if (doggo0Inputs.checked) {
         doggo0.start();
+        console.log(step); //                                    <-------USE STEPS IN SETTIME
       }
       if (doggo1Inputs.checked) {
         doggo1.start();
